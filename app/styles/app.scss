@@ -1,0 +1,70 @@
+/** Main **/
+
+/** Layouts **/
+.content{
+    position: relative;
+    min-height: 100%;
+    margin:0;    
+    
+    padding-top:52px;
+}
+.header{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width:100%;
+    height: 52px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);    
+    padding:15px 20px;
+    font-size:1.3em;
+    font-family:'Roboto Condensed';
+    text-transform: uppercase;
+    background-color: #fff;
+}
+.content-section{
+    position: relative;
+    padding:45px 20px 15px;    
+}
+
+.content-section:before{
+    max-width: 100%;
+    content: '';
+    position: absolute;
+    left: -1000px;
+    right: -1000px;
+    display: block;
+    margin: auto;
+    width: 0;
+    height: 0px;
+    top: -30px;
+    border-left: 700px solid transparent;
+    border-right: 700px solid transparent;
+    border-top: 30px solid transparent;
+}
+
+.section-main{
+    padding:65px 20px 35px;
+    text-align: center;
+    font-size:1.3em;
+    background:url(https://pixabay.com/get/e834b6092cf5013ed1534705fb0938c9bd22ffd41db4154795f1c970a5/strawberry-1176410_1920.jpg) no-repeat center center transparent;
+    background-size:cover;
+    color:#fff;    
+}
+.section-main h2{
+    text-shadow: 0 0 120px rgba(0,0,0,.5),0 0 8px rgba(0,0,0,.1);
+}
+.section-main:before{
+    display:none;
+}
+
+.btn-main{
+    margin: 30px;
+}
+
+.section-some{
+    background-color:#fff;
+}
+.section-some:before{
+  border-left-color:#fff;
+  border-right-color:#fff;   
+}

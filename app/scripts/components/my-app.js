@@ -23,7 +23,7 @@ System.register(['angular2/core'], function(exports_1) {
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: 'views/app.html',
-                        styleUrls: ['./styles/main.scss'],
+                        styleUrls: ['./styles/app.scss'],
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
