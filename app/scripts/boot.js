@@ -1,16 +1,4 @@
-System.register(['angular2/platform/browser', './components/my-app.ts'], function(exports_1) {
-    var browser_1, my_app_ts_1;
-    return {
-        setters:[
-            function (browser_1_1) {
-                browser_1 = browser_1_1;
-            },
-            function (my_app_ts_1_1) {
-                my_app_ts_1 = my_app_ts_1_1;
-            }],
-        execute: function() {
-            browser_1.bootstrap(my_app_ts_1.AppComponent);
-        }
-    }
-});
+var browser_1 = require('angular2/platform/browser');
+var my_app_ts_1 = require('./components/my-app.ts');
+browser_1.bootstrap(my_app_ts_1.App);
 //# sourceMappingURL=boot.js.map

@@ -1,0 +1,27 @@
+<div>
+    <h2>Registration</h2>
+    <form name="user.auth" (submit)="register()" *ngIf=" Auth.step == 'auth'">
+        <form-field name="username" label="Email">
+            <input type="email" name="username" [(ngModel)]=" User.username" />
+        </form-field>
+        <form-field name="password" label="Password">
+            <input type="password" name="password" [(ngModel)]=" User.password" />
+        </form-field>
+        <form-field name="confirmPassword" label="Confirm Password">
+            <input type="password" [(ngModel)]="user.confirmPassword" />
+        </form-field>
+        <button class="btn btn-success" >Sign Up</button>
+    </form>
+    <form name="user.register" (submit)="register()" *ngIf=" Auth.step == 'info'">
+        <form-field name="firstName" label="First Name">
+            <input type="text" [(ngModel)]=" User.firstName" />
+        </form-field>
+        <form-field name="lastName" label="Last Name">
+            <input type="text" name="lastName" [(ngModel)]=" User.lastName" />
+        </form-field>
+        <form-field name="phone" label="Phone">
+            <input type="text" [(ngModel)]=" User.phone" />
+        </form-field>
+        <button class="btn btn-success" >Finish</button>
+    </form>
+</div>

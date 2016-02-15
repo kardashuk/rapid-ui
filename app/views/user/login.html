@@ -1,0 +1,18 @@
+<div class="login-step" *ngIf="Auth.step == 'login'">
+    <h2>Welcome</h2>
+    <form name="user.signIn" (submit)="signIn()" >
+        <form-field name="username" label="Email">
+            <input type="email" name="username" [(ngModel)]="User.username" />
+        </form-field>
+        <form-field name="password" label="Password">
+            <input type="password" name="password" [(ngModel)]="User.password" />
+        </form-field>
+        <button class="btn btn-success" >Sign In</button>
+    </form>
+
+    <div>
+        Not a member? <span class="link" (click)="onSignUp()">SIGN UP NOW!</span>
+    </div>
+</div>
+
+<user-register *ngIf="Auth.step !== 'login'" [Auth]="Auth" [User]="User"></user-register>

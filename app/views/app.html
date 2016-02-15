@@ -1,19 +1,26 @@
-<header class="header">
-    <div class="pull-right">
-        <button class="btn btn-default btn-icon"><i class="icon lnr lnr-alarm"></i></button>
-    </div>
-        
-    Logo
-    
-</header>
+<div *ngIf="!currentUser">
+    <user-login></user-login>
+</div>
 
-<article class="content">
-    <section class="content-section section-main">
-        <h2> My Restaurant</h2>
-        <button class="btn  btn-success btn-main">Go To Menu</button>
-    </section>
-    
-    <section class="content-section section-some">
-        <h3 class="text-center">Some heading</h3>        
-    </section>
-</article>
+<div *ngIf="currentUser">
+    User
+    <header class="header">
+        <div class="pull-right">
+            <button class="btn btn-default btn-icon"><i class="icon lnr lnr-alarm"></i></button>
+        </div>
+
+        Logo
+
+    </header>
+
+    <article class="content">
+        <section class="content-section section-main">
+            <h2> My Restaurant</h2>
+            <button class="btn  btn-success btn-main">Go To Menu</button>
+        </section>
+
+        <section class="content-section section-some">
+            <h3 class="text-center">Some heading</h3>
+        </section>
+    </article>
+</div>
