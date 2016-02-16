@@ -1,8 +1,10 @@
-import {Component} from 'angular2/core';
+import {Component} 		from 'angular2/core';
 
-import {User} from '../model/user.ts';
+import {User} 			from '../model/user.ts';
 
 import {UserLogin}      from './user-login.ts';
+
+
 
 
 

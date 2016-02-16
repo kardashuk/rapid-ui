@@ -11,7 +11,8 @@ var uiFormField = (function () {
     uiFormField = __decorate([
         core_1.Component({
             selector: 'form-field',
-            templateUrl: 'views/form/field.html'
+            templateUrl: 'views/form/field.html',
+            inputs: ['name', 'label']
         })
     ], uiFormField);
     return uiFormField;

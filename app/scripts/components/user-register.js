@@ -5,15 +5,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('angular2/core');
+var form_field_ts_1 = require('./form-field.ts');
 var UserRegister = (function () {
     function UserRegister() {
     }
+    UserRegister.prototype.onSignIn = function () {
+        this.Auth.step = 'login';
+    };
     UserRegister = __decorate([
         core_1.Component({
             selector: 'user-register',
             templateUrl: 'views/user/register.html',
             styleUrls: ['./styles/user-auth.scss'],
-            inputs: ['Auth', 'User']
+            inputs: ['Auth', 'User'],
+            directives: [form_field_ts_1.uiFormField]
         })
     ], UserRegister);
     return UserRegister;

@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('angular2/core');
 var user_register_ts_1 = require('./user-register.ts');
+var form_field_ts_1 = require('./form-field.ts');
 var UserLogin = (function () {
     function UserLogin() {
         this.User = {};
@@ -19,7 +20,7 @@ var UserLogin = (function () {
             selector: 'user-login',
             templateUrl: 'views/user/login.html',
             styleUrls: ['./styles/user-auth.scss'],
-            directives: [user_register_ts_1.UserRegister]
+            directives: [user_register_ts_1.UserRegister, form_field_ts_1.uiFormField]
         })
     ], UserLogin);
     return UserLogin;
