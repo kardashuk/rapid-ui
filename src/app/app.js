@@ -1,21 +1,79 @@
-import React, { Component } from 'react';
-import logo from '../logo.svg';
-import './app.css';
+import React from 'react';
+import PropTypes from 'prop-types';
+import Button from 'material-ui/Button';
+import Dialog, {
+    DialogTitle,
+    DialogContent,
+    DialogContentText,
+    DialogActions,
+} from 'material-ui/Dialog';
+import AppBar from 'material-ui/AppBar';
+import Icon from 'material-ui/Icon';
+import Typography from 'material-ui/Typography';
+import { withStyles } from 'material-ui/styles';
+import withRoot from '../withRoot';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <header className="app-header">
-          <img src={logo} className="app-logo" alt="logo" />
-          <h1 className="app-title">Welcome to React</h1>
-        </header>
-        <p className="app-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+const styles = theme => ({
+    root: {
+        textAlign: 'center',
+        paddingTop: theme.spacing.unit * 20,
+    },
+});
+
+class App extends React.Component {
+    state = {
+        open: false,
+    };
+
+    handleClose = () => {
+        this.setState({
+            open: false,
+        });
+    };
+
+    handleClick = () => {
+        this.setState({
+            open: true,
+        });
+    };
+
+    render() {
+        const { classes } = this.props;
+        const { open } = this.state;
+
+        return (
+            <div className={classes.root}>
+                <AppBar title="Some">
+                    <Icon >arrow_back</Icon>
+                    iBalance
+                </AppBar>
+                <Dialog open={open} onClose={this.handleClose}>
+                    <DialogTitle>Super Secret Password</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>1-2-3-4-5</DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button color="primary" variant="raised" onClick={this.handleClose}>
+                            OK
+                        </Button>
+                    </DialogActions>
+                </Dialog>
+                <Typography variant="display1" gutterBottom>
+                    Material-UI
+                </Typography>
+                <Typography variant="subheading" gutterBottom>
+                    example project
+                </Typography>
+                <Button variant="raised" color="secondary" onClick={this.handleClick}>
+                    Super Secret Password
+                </Button>
+            </div>
+        );
+    }
 }
 
-export default App;
+App.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withRoot(withStyles(styles)(App));
