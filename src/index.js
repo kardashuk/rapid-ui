@@ -48,12 +48,15 @@ import { render } from 'react-dom'
 //--------------Investments---------------
 import './index.css';
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { compose, createStore } from 'redux'
 import App from './investments/components/App'
 import registerServiceWorker from './registerServiceWorker';
 import investmentApp from './investments/reducers'
-
-let store = createStore(investmentApp);
+import persistState from 'redux-localstorage'
+const enhancer = compose(
+    persistState(),
+);
+let store = createStore(investmentApp, enhancer);
 
 render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
