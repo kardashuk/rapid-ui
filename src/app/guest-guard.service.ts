@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Router, CanActivate } from '@angular/router';
+import {Injectable} from '@angular/core';
+import {Router, CanActivate} from '@angular/router';
 import {Observable} from "rxjs/Rx";
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
@@ -10,17 +10,18 @@ import {AngularFireAuth} from "angularfire2/auth";
 export class GuestGuardService implements CanActivate {
 
     constructor(private router: Router,
-                private _firebaseAuth: AngularFireAuth){}
+                private _firebaseAuth: AngularFireAuth) {
+    }
 
 
     canActivate(): Observable<boolean> {
         return Observable.from(this._firebaseAuth.authState)
             .take(1)
             .map(authenticated => {
-                if (authenticated){
-                    this.router.navigate([ '/dashboard' ]);
+                if (authenticated) {
+                    this.router.navigate(['/dashboard']);
                     return false;
-                }else{
+                } else {
                     return true;
                 }
             })

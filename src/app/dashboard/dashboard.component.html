@@ -1,13 +1,13 @@
 <header>
-  <div class="form-group">
-    <button type="buton" class="btn btn-primary btn-block"
-            style="margin-bottom: 20px" (click)="logout()" >
-      Logout
-    </button>
-  </div>
+    <div class="form-group">
+        <button type="buton" class="btn btn-primary btn-block"
+                style="margin-bottom: 20px" (click)="logout()">
+            Logout
+        </button>
+    </div>
 </header>
 <ul>
-  <li *ngFor="let item of items | async">
-    {{ item.name }}
-  </li>
+    <li *ngFor="let item of items | async">
+        {{ item.name }}
+    </li>
 </ul>

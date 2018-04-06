@@ -14,7 +14,7 @@ import {AuthService} from './auth.service';
 import {LoginComponent} from './login/login.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AuthGuardService as AuthGuard} from './auth-guard.service';
-import {GuestGuardService as GuestGuard } from './guest-guard.service';
+import {GuestGuardService as GuestGuard} from './guest-guard.service';
 
 @NgModule({
     declarations: [
