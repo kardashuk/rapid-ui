@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
     signInWithEmail() {
         this.authService.signInRegular(this.user.email, this.user.password)
             .then((res) => {
-                console.log(res);
                 this.router.navigate(['dashboard']);
             })
             .catch((err) => console.log('error: ' + err));

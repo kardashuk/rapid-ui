@@ -8,6 +8,9 @@
 </header>
 <ul>
     <li *ngFor="let item of items | async">
-        {{ item.name }}
+        {{ item.name }}:
+        <div>
+            {{ item.access.join(', ') }}
+        </div>
     </li>
 </ul>
